@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ftracker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ba9bc05eb273447ac2eb67a5e91a43cc0a973db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+45e059a7b74f2bf6481414acaa4d2e1da682942b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ftracker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ftracker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
