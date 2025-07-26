@@ -6,15 +6,15 @@
 
 <MudText Typo="Typo.h4" GutterBottom="true">Transactions</MudText>
 
-<MudTable Items="@_transactions" Hover="true" Striped="true">
+<MudTable Items="@_transactions" Hover="true" Striped="true" SortLabel="Sort by">
     <HeaderContent>
-        <MudTh>Amount</MudTh>
+        <MudTh> <MudTableSortLabel SortBy="new Func<Transaction, object>(x => x.Amount)">Amount</MudTableSortLabel></MudTh>
         <MudTh>Category</MudTh>
-        <MudTh>Description</MudTh>
-        <MudTh>Date</MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<Transaction, object>(x => x.Description!)">Description </MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<Transaction, object>(x => x.Date)">Date</MudTableSortLabel></MudTh>
     </HeaderContent>
     <RowTemplate>
-        <MudTd DataLabel="Amount">@context.Amount.ToString("C")</MudTd>
+        <MudTd DataLabel="Amount">@context.Amount</MudTd>
         <MudTd DataLabel="Category">@context.Category?.Name</MudTd>
         <MudTd DataLabel="Description">@context.Description</MudTd>
         <MudTd DataLabel="Date">@context.Date.ToShortDateString()</MudTd>
@@ -25,11 +25,20 @@
 </MudTable>
 
 @code {
-    private List<Ftracker.Transaction> _transactions = new();
+    private List<Transaction> _transactions = new();
 
     protected override async Task OnInitializedAsync()
     {
-        // Call your service to get the initial list of transactions
-        _transactions = await FinService.GetTransactionsAsync();
+        // It's good practice to provide a default sort order on initial load.
+        _transactions = await FinService.GetTransactionsAsync(sortBy: "date", ascending: false);
     }
+
+    /*
+    private async Task SortChanged(SortDefinition<Transaction> sortDefinition)
+    {
+        string sortBy = sortDefinition.SortBy;
+
+        _transactions = await FinService.GetTransactionsAsync(sortBy: sortBy, ascending: sortDefinition.Descending);
+    }
+*/
 }
