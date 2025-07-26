@@ -1,0 +1,35 @@
+@page "/transactions"
+@using Ftracker
+@inject FinanceService FinService
+
+<PageTitle>Transactions</PageTitle>
+
+<MudText Typo="Typo.h4" GutterBottom="true">Transactions</MudText>
+
+<MudTable Items="@_transactions" Hover="true" Striped="true">
+    <HeaderContent>
+        <MudTh>Amount</MudTh>
+        <MudTh>Category</MudTh>
+        <MudTh>Description</MudTh>
+        <MudTh>Date</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Amount">@context.Amount.ToString("C")</MudTd>
+        <MudTd DataLabel="Category">@context.Category?.Name</MudTd>
+        <MudTd DataLabel="Description">@context.Description</MudTd>
+        <MudTd DataLabel="Date">@context.Date.ToShortDateString()</MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager />
+    </PagerContent>
+</MudTable>
+
+@code {
+    private List<Ftracker.Transaction> _transactions = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Call your service to get the initial list of transactions
+        _transactions = await FinService.GetTransactionsAsync();
+    }
+}

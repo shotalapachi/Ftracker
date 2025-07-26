@@ -8,7 +8,7 @@ public class FinanceDbContextFactory  : IDesignTimeDbContextFactory<FinanceDbCon
     {
         var optionsBuilder = new DbContextOptionsBuilder<FinanceDbContext>();
         
-        optionsBuilder.UseSqlite("Data Source=Finance.db");
+        optionsBuilder.UseSqlite("Data Source=C:\\Users\\shota\\RiderProjects\\FIntracker\\Ftracker\\Finance.db");
         return new FinanceDbContext(optionsBuilder.Options);
     }
 }
