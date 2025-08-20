@@ -6,7 +6,7 @@
 
 <MudText Typo="Typo.h4" GutterBottom="true">Transactions</MudText>
 
-<MudTable Items="@_transactions" Hover="true" Striped="true" SortLabel="Sort by">
+<MudTable Items="@_transactions" Hover="true" Striped="true" SortLabel="Sort by" SortChanged="SortChanged">
     <HeaderContent>
         <MudTh> <MudTableSortLabel SortBy="new Func<Transaction, object>(x => x.Amount)">Amount</MudTableSortLabel></MudTh>
         <MudTh>Category</MudTh>
@@ -33,12 +33,12 @@
         _transactions = await FinService.GetTransactionsAsync(sortBy: "date", ascending: false);
     }
 
-    /*
     private async Task SortChanged(SortDefinition<Transaction> sortDefinition)
     {
         string sortBy = sortDefinition.SortBy;
 
-        _transactions = await FinService.GetTransactionsAsync(sortBy: sortBy, ascending: sortDefinition.Descending);
+        // MudBlazor sets Descending=true when sorting descending, but
+        // FinService expects an 'ascending' flag. Invert the value to match.
+        _transactions = await FinService.GetTransactionsAsync(sortBy, ascending: !sortDefinition.Descending);
     }
-*/
 }
