@@ -6,7 +6,7 @@
 
 <MudText Typo="Typo.h4" GutterBottom="true">Transactions</MudText>
 
-<MudTable Items="@_transactions" Hover="true" Striped="true" SortLabel="Sort by" SortChanged="SortChanged">
+<MudTable Items="@_transactions" RowClassFunc="GetAmountClass" SortLabel="Sort by" SortChanged="SortChanged">
     <HeaderContent>
         <MudTh> <MudTableSortLabel SortBy="new Func<Transaction, object>(x => x.Amount)">Amount</MudTableSortLabel></MudTh>
         <MudTh>Category</MudTh>
@@ -25,6 +25,10 @@
 </MudTable>
 
 @code {
+    private string GetAmountClass(Transaction transaction, int rowNumber)
+    {
+        return transaction.Amount < 0 ? "negative-value" : "positive-value";
+    }
     private List<Transaction> _transactions = new();
 
     protected override async Task OnInitializedAsync()
@@ -42,3 +46,12 @@
         _transactions = await FinService.GetTransactionsAsync(sortBy, ascending: !sortDefinition.Descending);
     }
 }
+<style>
+    .negative-value {
+        background: #efa56b; 
+    }
+
+    .positive-value {
+        background: #aaefaa; 
+    }
+</style>

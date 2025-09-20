@@ -40,4 +40,9 @@ public class FinanceService
 
         return await query.ToListAsync();
     }
+    public async Task AddTransactionAsync(Transaction transaction)
+    {
+        _context.Transactions.Add(transaction);
+        await _context.SaveChangesAsync();
+    }
 }
