@@ -1,0 +1,15 @@
+C:\Users\shota\RiderProjects\FIntracker\Ftracker\bin\Debug\net9.0\Ftracker.deps.json
+C:\Users\shota\RiderProjects\FIntracker\Ftracker\bin\Debug\net9.0\Ftracker.runtimeconfig.json
+C:\Users\shota\RiderProjects\FIntracker\Ftracker\bin\Debug\net9.0\Ftracker.dll
+C:\Users\shota\RiderProjects\FIntracker\Ftracker\bin\Debug\net9.0\Ftracker.pdb
+C:\Users\shota\RiderProjects\FIntracker\Ftracker\obj\Debug\net9.0\Ftracker.csproj.AssemblyReference.cache
+C:\Users\shota\RiderProjects\FIntracker\Ftracker\obj\Debug\net9.0\Ftracker.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shota\RiderProjects\FIntracker\Ftracker\obj\Debug\net9.0\Ftracker.AssemblyInfoInputs.cache
+C:\Users\shota\RiderProjects\FIntracker\Ftracker\obj\Debug\net9.0\Ftracker.AssemblyInfo.cs
+C:\Users\shota\RiderProjects\FIntracker\Ftracker\obj\Debug\net9.0\Ftracker.csproj.CoreCompileInputs.cache
+C:\Users\shota\RiderProjects\FIntracker\Ftracker\obj\Debug\net9.0\Ftracker.sourcelink.json
+C:\Users\shota\RiderProjects\FIntracker\Ftracker\obj\Debug\net9.0\Ftracker.dll
+C:\Users\shota\RiderProjects\FIntracker\Ftracker\obj\Debug\net9.0\refint\Ftracker.dll
+C:\Users\shota\RiderProjects\FIntracker\Ftracker\obj\Debug\net9.0\Ftracker.pdb
+C:\Users\shota\RiderProjects\FIntracker\Ftracker\obj\Debug\net9.0\Ftracker.genruntimeconfig.cache
+C:\Users\shota\RiderProjects\FIntracker\Ftracker\obj\Debug\net9.0\ref\Ftracker.dll

@@ -1,0 +1,13 @@
+﻿@* This component uses MudBlazor's navigation system, which works perfectly with the MudLayout. *@
+<MudNavMenu>
+    @* It's good practice to have a title at the top of your nav menu. *@
+    <MudText Typo="Typo.h6" Class="px-4 py-2">FTracker</MudText>
+    <MudDivider Class="my-2" />
+
+    @* Each link is a MudNavLink, with a matching icon. *@
+    <MudNavLink Href="/" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Home</MudNavLink>
+    <MudNavLink Href="/transactions" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.ReceiptLong">Transactions</MudNavLink>
+    
+    @* I've added a placeholder for your future Loans page based on our plan. *@
+    <MudNavLink Href="/loans" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.AccountBalance">Loans</MudNavLink>
+</MudNavMenu>
